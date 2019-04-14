@@ -1,0 +1,72 @@
+﻿@using TTN_DXQ_LCH_NTN.Models
+@model PagedList.PagedList<Blog>
+@{
+    ViewBag.Title = "listBlog";
+    Layout = null;
+}
+
+@{
+    foreach (var item in Model)
+    {
+        <article class="baiviet">
+            <div class="anh">
+                <a href="#"><img src="@Url.Content(item.Image)" class="img-responsive" alt=""></a>
+            </div>
+
+            <div class="thongtin">
+                <header class="header-thongtin">
+                    <h1 class="title-thongtin"><a href="#">@item.Title</a></h1>
+                    <span class="date-thongtin">@item.Date</span>
+                </header>
+                <div class="noidung">
+                    <p>@item.ContentDM</p>
+                    <a href="#"><button class="button xemthem">Xem thêm</button></a>
+                </div>
+                <div class="baiviet-chiase">
+                    <h3>Chia sẻ ngay</h3>
+                    <ul class="icon-chiase">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </article> <!-- end baiviet -->
+
+
+    }
+}
+
+<div class="pageindexs">
+    @{
+        for (int i = 1; i <= Model.PageCount; i++)
+        {
+            if (i == Model.PageNumber)
+            {
+                <span data-id="@i" style="color:snow" class="pageindex">@i</span>
+            }
+            else
+            {
+                <span data-id="@i" style="color:orange" class="pageindex">@i</span>
+            }
+        }
+    }
+</div>
+<script>
+    $(function () {
+        $('.pageindex').click(function () {
+            var chisotrang = $(this).data('id');
+            loadData(chisotrang);
+        })
+    })
+</script>
+<style>
+
+    .pageindexs span {
+        margin-left: 10px;
+        background: orangered;
+        padding: 10px;
+        cursor: pointer;
+    }
+</style>

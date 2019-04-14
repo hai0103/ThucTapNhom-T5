@@ -1,0 +1,90 @@
+﻿@using TTN_DXQ_LCH_NTN.Models;
+@model List<CategoryOfProduct>
+
+@{
+    ViewBag.Title = "Store";
+    Layout = "~/Views/Shared/NguoiDungLayout.cshtml";
+}
+>
+
+<link href="~/Content/css/vmenu.css" rel="stylesheet" />
+@{
+    var dem = 0;    
+}
+<div id="listProduct">
+    <div class="title-store">
+        <div class="container">
+            <div class="store-header">
+                <div id="carousel-id" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="item">
+                            <img src="~/Content/img/img/banner_36660e59.png" style="width:100%;" />
+                        </div>
+                        <div class="item">
+                            <img src="~/Content/img/img/banner_36660e59.png" style="width:100%;" />
+                        </div>
+                        <div class="item active">
+                            <img src="~/Content/img/img/banner_36660e59.png" style="width:100%;" />
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container" ">
+        <div class="row">
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                <ul class="list-group-item menuleft">
+                    <a class="head">Thú cưng</a>
+
+                    @{
+                        foreach (var item in Model)
+                        {
+                          <li data-id="@item.CategoryOfProductID" class="listitem"><a href="">@item.CategoryOfProductName</a><span>(@item.Total)</span></li>
+                        }
+                    }
+                    <hr />
+                    <a class="head">Khoảng giá</a>
+                    <li class="listitem">50 ngàn-100 ngàn<span>(100)</span></li>
+                    <li class="listitem">100 ngàn-500 ngàn<span>(100)</span></li>
+                    <li class="listitem">500 ngàn-1 triệu<span>(100)</span></li>
+                    <li class="listitem">1 triệu-5 triệu<span>(100)</span></li>
+                    <li class="listitem">Trên 5 triệu<span>(100)</span></li>
+
+                </ul>
+            </div>
+            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 ">
+                <div class="content">
+
+                </div>
+                @*Danh sách sản phẩm*@
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    /// Gọi ajax load dữ liệu product
+         function loadData(maloai,chisotrang) {
+            $.ajax({
+                type: 'GET',//HTTP GET
+                data: { categoryOfProductID: maloai, pageIndex: chisotrang },//truyền tham số cho action Product là maloai
+                url: '@Url.Action("Product","User")',//Gọi action Product trong UserController
+                dataType: 'html', //kiểu dữ liệu lvà html, vì lấy từ partial view product
+                success: function (data) {
+                    $('.content').html(data +'<span class="maloai" data-id="'+maloai+'"></span>');
+                }
+            });
+         }
+    $(function () {
+
+        loadData(null,null);//null do click thì mới lấy categoryOfProductID
+        $('.listitem').click(function () {
+            var maloai = $(this).data('id');
+            loadData(maloai,null);
+        })
+    });
+</script>
