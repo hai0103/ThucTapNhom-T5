@@ -5,37 +5,185 @@
     Layout = "~/Views/Shared/NguoiDungLayout.cshtml";
 }
 
-<table border="1" >
-    <thead>
-        <tr>
-            <th style="width: 20%;">Tên</th>
-            <th style="width:50%">ảnh</th>
-            <th>Đơn giá</th>
-            <th>Số lượng</th>
-            <th>Thành tiền</th>
-        </tr>
-    </thead>
-    <tbody>
-        @{
-            foreach (var item in Model)
-            {
+@*<table border="1">
+        <thead>
+            <tr>
+                <th style="width: 20%;">Tên</th>
+                <th style="width:50%">ảnh</th>
+                <th>Đơn giá</th>
+                <th>Số lượng</th>
+                <th>Thành tiền</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.ProductName</td>
+                        <td><a href="@Url.Action("ProductDetail","User",new{@ProductID=item.ProductID })"><img src="@Url.Content(item.Image)" class="productImg" alt="@item.ProductName" /></a></td>
+                        <td>@String.Format("{0:0,0}", item.Price) đ </td>
+                        <td>@item.Total</td>
+                        <td>@item.TotalPrice</td>
+                    </tr>
+                }
                 <tr>
-                    <td>@item.ProductName</td>
-                    <td><img src="@Url.Content(item.Image)" class="productImg" alt="@item.ProductName" /></td>
-                    <td>@item.Price</td>
-                    <td>@item.Total</td>
-                    <td>@item.TotalPrice</td>
+                    <td colspan="6" style="text-align:right;color:blue">
+                        @Html.ActionLink("Edit", "EditShoppingCart")
+                    </td>
                 </tr>
             }
-        }
-    </tbody>
-</table>
+        </tbody>
+    </table>*@
+
+
+
+@*@using (Html.BeginForm("DatHang", "GioHang"))
+    {
+        <button type="submit" value="Order" class="btn btn-danger submit">Đặt hàng</button>
+    }*@
+@{ 
+    var tong = 0;
+}
+<div class="giohang">
+    <div class="left">
+        <div class="row">
+            @{
+                foreach (var item in Model)
+                {
+                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                        <div class="rowitem">
+                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                <div class="thumbnail">
+                                    <img src="@Url.Content(item.Image)" alt="">
+                                </div>
+                            </div>
+                            <div class="col-right">
+                                <a href="@Url.Action("ProductDetail","User",new{@ProductID=item.ProductID })"><p>@item.ProductName</p></a>
+                                <div class="delete"><a href="">Xóa</a></div>
+                                <div class="gia">@String.Format("{0:0,0}", item.Price)</div>
+                                <form id="formTT" action="">
+                                    <input data-id="@item.ProductID" id="soLuong" name="txtSoLuong" type="number" value=@item.Total>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                    tong += (int)(item.TotalPrice);
+                }
+
+            }
+        </div>
+    </div>
+
+    @*@using (Html.BeginForm("Update", "GioHang", new { @ProductID = item.ProductID }))
+    {
+        <td>@Html.TextBox("txtSoLuong", item.Total)</td>
+        <td>@item.TotalPrice</td>
+        <td>
+            <input type="submit" value="Update" /> <br />
+            @Html.ActionLink("Xóa", "Delete", new { @ProductID = item.ProductID })
+        </td>
+    }*@
+
+    @*edit gio hang*@
+
+    @using (Html.BeginForm("DatHang", "GioHang"))
+    {
+        <div class="price">
+            <p class="total">Thành tiền</p>
+            <span>@String.Format("{0:0,0}", tong)</span><br />
+            <span>đ</span>
+            <input type="submit" class="btn btn-block btn-danger thanhtoan" value="Thanh toán">
+        </div>
+    }
+
+</div>
 
 <style>
-    .productImg{
-        width:20%;
+    * {
+        margin: 0;
+        padding: 0
     }
-    table{
-        margin:243px;
+
+    .thumbnail {
+        margin: 12px 5px;
+    }
+
+    .col-right p {
+        font-size: 16px;
+        margin: 12px 5px;
+        color: #33333e;
+    }
+    .col-right a{
+        text-decoration:none;
+    }
+    .left {
+        width: 60%;
+        background: #e4e3e3;
+        /* height: 107px; */
+        margin-left: 162px;
+    }
+
+    .giohang {
+        display: flex;
+        margin: 100px 20px 500px 20px;
+    }
+
+    .price span {
+        color: red;
+        font-size: 20px;
+    }
+
+    p.total {
+        font-size: 20px;
+    }
+
+    .price {
+        text-align: center;
+        box-sizing: border-box;
+        /* border: 1px solid gray; */
+        width: 153px;
+        background: #6964642e;
+        height: 107px;
+        margin-left: 27px;
+    }
+
+    .thanhtoan {
+        margin-top: 54px;
+        display: block;
+    }
+
+    price p {
+        font-size: 15px;
+    }
+
+    input[type="number"] {
+        position: relative;
+        left: 447px;
+        top: -75px;
+        width: 76px;
+    }
+
+    .gia {
+        position: relative;
+        left: 348px;
+        top: -51px;
+        font-size: 16px;
     }
 </style>
+
+<script>
+    @*$('#soLuong').change(function () {
+        soLuongMoi = $(this).val();
+        masp = $(this).attr('data-id');
+        $.ajax({
+            url:'@Url.Action("Update","GioHang")',
+            type: 'POST',
+            data: { ProductID: masp, Total: soLuongMoi },
+            success: function() {
+                location.reload();
+            }
+        });
+    })*@
+</script>
