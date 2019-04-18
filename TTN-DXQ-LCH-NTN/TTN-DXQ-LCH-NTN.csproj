@@ -140,8 +140,6 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
-    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -161,66 +159,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Content\js\bootstrap.js" />
-    <Content Include="Areas\Content\js\bootstrap.min.js" />
-    <Content Include="Areas\Content\js\counter.js" />
-    <Content Include="Areas\Content\js\custom.js" />
-    <Content Include="Areas\Content\js\excanvas.js" />
-    <Content Include="Areas\Content\js\fullcalendar.min.js" />
-    <Content Include="Areas\Content\js\jquery-1.9.1.min.js" />
-    <Content Include="Areas\Content\js\jquery-migrate-1.0.0.min.js" />
-    <Content Include="Areas\Content\js\jquery-ui-1.10.0.custom.min.js" />
-    <Content Include="Areas\Content\js\jquery.chosen.min.js" />
-    <Content Include="Areas\Content\js\jquery.cleditor.min.js" />
-    <Content Include="Areas\Content\js\jquery.cookie.js" />
-    <Content Include="Areas\Content\js\jquery.dataTables.min.js" />
-    <Content Include="Areas\Content\js\jquery.elfinder.min.js" />
-    <Content Include="Areas\Content\js\jquery.flot.js" />
-    <Content Include="Areas\Content\js\jquery.flot.pie.js" />
-    <Content Include="Areas\Content\js\jquery.flot.resize.min.js" />
-    <Content Include="Areas\Content\js\jquery.flot.stack.js" />
-    <Content Include="Areas\Content\js\jquery.gritter.min.js" />
-    <Content Include="Areas\Content\js\jquery.imagesloaded.js" />
-    <Content Include="Areas\Content\js\jquery.iphone.toggle.js" />
-    <Content Include="Areas\Content\js\jquery.knob.modified.js" />
-    <Content Include="Areas\Content\js\jquery.masonry.min.js" />
-    <Content Include="Areas\Content\js\jquery.noty.js" />
-    <Content Include="Areas\Content\js\jquery.raty.min.js" />
-    <Content Include="Areas\Content\js\jquery.sparkline.min.js" />
-    <Content Include="Areas\Content\js\jquery.ui.touch-punch.js" />
-    <Content Include="Areas\Content\js\jquery.uniform.min.js" />
-    <Content Include="Areas\Content\js\jquery.uploadify-3.1.min.js" />
-    <Content Include="Areas\Content\js\modernizr.js" />
-    <Content Include="Areas\Content\js\retina.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Areas\Content\cssAdmin\bootstrap-responsive.css" />
-    <Content Include="Areas\Content\cssAdmin\bootstrap-responsive.min.css" />
-    <Content Include="Areas\Content\cssAdmin\bootstrap.css" />
-    <Content Include="Areas\Content\cssAdmin\bootstrap.min.css" />
-    <Content Include="Areas\Content\cssAdmin\chosen.css" />
-    <Content Include="Areas\Content\cssAdmin\elfinder.min.css" />
-    <Content Include="Areas\Content\cssAdmin\elfinder.theme.css" />
-    <Content Include="Areas\Content\cssAdmin\font-awesome-ie7.min.css" />
-    <Content Include="Areas\Content\cssAdmin\font-awesome.min.css" />
-    <Content Include="Areas\Content\cssAdmin\fullcalendar.css" />
-    <Content Include="Areas\Content\cssAdmin\glyphicons.css" />
-    <Content Include="Areas\Content\cssAdmin\halflings.css" />
-    <Content Include="Areas\Content\cssAdmin\ie.css" />
-    <Content Include="Areas\Content\cssAdmin\ie9.css" />
-    <Content Include="Areas\Content\cssAdmin\jquery-ui-1.8.21.custom.css" />
-    <Content Include="Areas\Content\cssAdmin\jquery.cleditor.css" />
-    <Content Include="Areas\Content\cssAdmin\jquery.gritter.css" />
-    <Content Include="Areas\Content\cssAdmin\jquery.iphone.toggle.css" />
-    <Content Include="Areas\Content\cssAdmin\jquery.noty.css" />
-    <Content Include="Areas\Content\cssAdmin\noty_theme_default.css" />
-    <Content Include="Areas\Content\cssAdmin\style-forms.css" />
-    <Content Include="Areas\Content\cssAdmin\style-responsive.css" />
-    <Content Include="Areas\Content\cssAdmin\style.css" />
-    <Content Include="Areas\Content\cssAdmin\uniform.default.css" />
-    <Content Include="Areas\Content\cssAdmin\uploadify.css" />
     <Content Include="Content\css\blog.css" />
     <Content Include="Content\css\menu.css" />
     <Content Include="Content\css\style.css" />
@@ -309,8 +251,6 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\vendor\vendor.rar" />
-    <Content Include="Areas\Admin\Views\web.config" />
-    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -342,16 +282,15 @@
     <Content Include="Views\Login\Register.cshtml" />
     <Content Include="Views\User\ListAnimalPartial.cshtml" />
     <Content Include="Views\User\ListDevicePartial.cshtml" />
-    <Content Include="Areas\Admin\Views\Shared\AdminLayout.cshtml" />
     <Content Include="Views\User\Product.cshtml" />
     <Content Include="Views\User\listBlog.cshtml" />
     <Content Include="Views\GioHang\ShoppingCart.cshtml" />
     <Content Include="Views\User\ProductDetail.cshtml" />
     <Content Include="Views\GioHang\GioHangPartial.cshtml" />
+    <Content Include="Views\GioHang\EditShoppingCart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

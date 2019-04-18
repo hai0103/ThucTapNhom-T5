@@ -73,7 +73,7 @@
                 type: 'GET',//HTTP GET
                 data: { categoryOfProductID: maloai, pageIndex: chisotrang },//truyền tham số cho action Product là maloai
                 url: '@Url.Action("Product","User")',//Gọi action Product trong UserController
-                dataType: 'html', //kiểu dữ liệu lvà html, vì lấy từ partial view product
+                dataType: 'html', //kiểu dữ liệu là html, vì lấy từ partial view product
                 success: function (data) {
                     $('.content').html(data +'<span class="maloai" data-id="'+maloai+'"></span>');
                 }

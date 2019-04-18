@@ -1,7 +1,7 @@
 ﻿@using TTN_DXQ_LCH_NTN.Models
 @model LoginModel
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/NguoiDungLayout.cshtml";
 }
 
 <link href="~/Content/css/login.css" rel="stylesheet" />
@@ -15,14 +15,14 @@
             <img src="~/Content/img/img/logo.png" id="icon" alt="User Icon" />
         </div>
         <!-- Login Form -->
-        <form method="post">
+        <form method="post" id="contactForm">
             <hr />
            
             <input type="text" id="login" class="fadeIn second" name="us" placeholder="username" required>
            
             <input type="password" id="password" class="fadeIn third" name="mk" placeholder="password" required>
            
-            <input type="submit" class="fadeIn fourth" value="Log In">
+            <input type="submit" id="submit" class="fadeIn fourth" value="Log In">
         </form>
         <!-- Remind Passowrd -->
         <div id="formFooter">
@@ -33,3 +33,13 @@
 
 </div>
 
+<script>
+    //window.onload = function () {
+    //    if (localStorage) {
+    //        document.getElementById('contactForm').addEventListener('submit', function () {
+    //            var name = document.getElementById('login').value;
+    //            localStorage.setItem('name', name);
+    //        });
+    //    }
+    //}
+</script>

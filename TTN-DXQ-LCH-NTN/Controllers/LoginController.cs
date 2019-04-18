@@ -19,8 +19,7 @@ namespace TTN_DXQ_LCH_NTN.Controllers
 
         [HttpPost]
         public ActionResult Login(Customer customer)
-        {
-            
+        {  
                 string userName = Request.Form["us"];
                 string password = Request.Form["mk"];
 
@@ -29,7 +28,8 @@ namespace TTN_DXQ_LCH_NTN.Controllers
                 {
                     ViewBag.mess = "Đăng nhập thành công";
                     Session["Account"] = customer;
-                    return RedirectToAction("Index", "User");
+                    //Session["ShoppingCart"] = Session["ShoppingCart"];
+                    return RedirectToAction("Store", "User");
                 }
                 ViewBag.mess = "Đăng nhập thất bại";  
             return View();

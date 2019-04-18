@@ -55,7 +55,7 @@ namespace TTN_DXQ_LCH_NTN.Controllers
                         select pr).ToList();
             }
 
-            return PartialView(items.OrderBy(x=>x.CategoryOfProductID).ToPagedList(_pageIndex,6));
+            return PartialView(items.OrderBy(x=>x.CategoryOfProductID).ToPagedList(_pageIndex,12));
         }
 
         //Partial View Blog
@@ -83,7 +83,7 @@ namespace TTN_DXQ_LCH_NTN.Controllers
             return PartialView(lstAni);
         }
 
-        public ActionResult ProductDetail(int ProductID=1)
+        public ActionResult ProductDetail(int ProductID)
         {
             Product product = db.Products.SingleOrDefault(p => p.ProductID == ProductID);
             if (product == null)
@@ -92,8 +92,6 @@ namespace TTN_DXQ_LCH_NTN.Controllers
                 return null;
             }
             return View(product);
-        }
-
-    
+        } 
     }
 }
