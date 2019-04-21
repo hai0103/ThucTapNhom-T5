@@ -1,0 +1,11 @@
+﻿
+@using TTN_DXQ_LCH_NTN.Models
+
+@model List<CategoryOfProduct>
+
+@{
+    foreach (var item in Model)
+    {
+        <li class="listitem"><a href="">@item.CategoryOfProductName</a><span>(@item.Total)</span></li>
+    }
+}

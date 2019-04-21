@@ -1,0 +1,344 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: "Raleway", sans-serif;
+}
+
+div#tieude-duongdan {
+    margin-bottom: 35px;
+    margin-top: 25px;
+}
+
+.tentrang h3 {
+    font-size: 30px;
+    font-weight: 600;
+    padding: 35px 0px 5px 22px;
+    margin: 0px 0px;
+    background-color: #eee;
+}
+
+
+ul.breadcrumb {
+  padding: 28px 22px;
+  list-style: none;
+  background-color: #eee;
+}
+ul.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+}
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+ul.breadcrumb li a {
+  color: #333;
+  text-decoration: none;
+  transition-duration: 0.4s;
+}
+ul.breadcrumb li a:hover {
+  color: #f6ab49;
+  text-decoration: none;
+}
+
+.anh {
+    float: left;
+    margin: 0;
+    width: 40%;
+    position: relative;
+    overflow: hidden;
+}
+
+.anh a {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+#blog-content .baiviet {
+    background: white;
+    float: left;
+    margin: 0 0 40px;
+    width: 100%;
+}
+
+#blog-content .baiviet .anh a img {
+    width: 100%;
+    margin-top: 0;
+    height: auto;
+    transition: all ease-in-out;
+}
+
+#blog-content .baiviet .thongtin {
+    padding-left: 30px;
+    float: left;
+    width: 60%;
+    text-align: left;
+}
+
+#blog-content .baiviet .thongtin header.header-thongtin {
+    background: none;
+    border: none;
+    float: none;
+    display: block;
+    padding: 0;
+    margin: 0 0 20px;
+    position: relative;
+}
+
+.title-thongtin {
+  text-transform: capitalize;
+  line-height: 1;
+  margin-bottom: 10px;
+  font-weight: 500;}
+
+.thongtin .header-thongtin h1.title-thongtin {
+    margin-top: 0;
+}
+
+.baiviet .header-thongtin .title-thongtin a {
+    color: #4c4b4b;
+    font-size: 25px;
+    transition-duration: 0.4s;
+}
+
+
+span.date-thongtin {
+    color: gray;
+    letter-spacing: 0.05em;
+}
+
+.baiviet .header-thongtin .title-thongtin a:hover {
+    color: #f6ab49;
+    text-decoration: none;
+}
+
+.baiviet .thongtin .noidung {
+    float: left;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.baiviet .thongtin .noidung p {
+    text-align: left;
+    margin-bottom: 30px;
+    font-size: 15px;
+}
+
+.thongtin .noidung .xemthem {
+  background-color: white;
+  color: #b37a31;
+  border: 2px solid #f6ab49;
+  padding: 4px 10px;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 0px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.thongtin .noidung .xemthem:hover {
+  background-color: #f6ab49;
+  color: white;
+}
+
+.baiviet .thongtin .baiviet-chiase {
+    float: left;
+    margin-top: 1px;
+}
+
+.baiviet .thongtin .baiviet-chiase h3 {
+    float: left;
+    font-size: 12px;
+    color: gray;
+    line-height: 16px;
+    margin: 2px 22px 0px 2px;
+    width: auto;
+    text-transform: uppercase;
+}
+
+.baiviet .thongtin .baiviet-chiase  .icon-chiase {
+    float: left;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 15px;
+}
+
+.baiviet .thongtin .baiviet-chiase .icon-chiase li {
+    float: left;
+    list-style: none;
+    position: relative;
+}
+
+.baiviet .thongtin .icon-chiase li a i {
+    line-height: 20px;
+    color: #949694;
+    transition-duration: 0.4s;
+}
+
+#blog-content .baiviet .anh a img:hover {
+    transform: scale(1.1);
+    transition: all ease-in-out 0.5s;
+}
+
+.so-trang {
+  display: inline-block;
+}
+
+.so-trang a {
+  color: #f6ab49;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #f6ab49;
+  margin-left: 5px;
+  transition-duration: 0.4s;
+}
+
+.so-trang a.active {
+  background-color: #f6ab49;
+  color: white;
+  border: 1px solid #f6ab49;
+}
+
+.so-trang a:hover:not(.active) {
+  background-color: #f6ab49;
+  color: white;
+}
+
+.baiviet .thongtin .icon-chiase li a i:hover {
+    color: #f6ab49;
+}
+
+.timkiem .khung-timkiem form button {
+    color: #f6ab49;
+    background-color: transparent;
+    border-color: #ededed;
+    border-image: none;
+    border-style: none none none solid;
+    border-width: medium medium medium 1px;
+    cursor: pointer;
+    font-size: 20px;
+    height: 100%;
+    padding: 0 20px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transition: all 0.3s ease 0s;
+    transform: translateY(-50%);
+}
+
+.cot-ben-phai .timkiem h4 {
+    font-size: 20px;
+    color: #242424;
+    font-weight: 600;
+    margin: 0;
+}
+
+.cot-ben-phai .timkiem .khung-timkiem {
+    margin-bottom: 50px;
+    margin-top: 25px;
+}
+
+.cot-ben-phai .timkiem .khung-timkiem form input {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #ededed;
+    color: #666;
+    height: 45px;
+    padding: 0 66px 0 15px;
+    width: 100%;
+}
+
+.cot-ben-phai .the h4 {
+    font-size: 20px;
+    color: #242424;
+    font-weight: 600;
+    margin: 0;
+}
+
+.cot-ben-phai .the .loai-the {
+    margin-top: 20px;
+}
+
+ul {}
+
+.cot-ben-phai .the .loai-the ul li {
+    list-style: outside none none;
+    margin-bottom: 6px;
+}
+
+.cot-ben-phai .the .loai-the ul li a {
+    text-transform: capitalize;
+    color: #333;
+    display: block;
+    font-size: 14px;
+    transition: all 0.4s ease-out 0s;
+}
+
+.cot-ben-phai .the .loai-the ul li a:hover {
+    color: #f6ab49;
+    padding-left: 5px;
+    text-transform: capitalize;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.cot-ben-phai .baiviet-ganday {
+    margin-top: 20px;
+}
+
+.cot-ben-phai .baiviet-ganday h4 {
+    color: #242424;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.cot-ben-phai .baiviet-ganday .mot-baiviet-ganday {
+    display: flex;
+    margin-bottom: 20px;
+    margin-top: 25px;
+}
+
+.anh-baiviet-ganday {
+    flex: 0 0 90px;
+}
+
+.anh-baiviet-ganday img {
+    width: 100%;
+}
+
+.noidung-baiviet-ganday {
+    margin: 0px 0 0 15px;
+}
+
+.noidung-baiviet-ganday h4 {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    margin: 0 0 5px;
+}
+
+.noidung-baiviet-ganday span {
+    color: #8c8c8c;
+    font-weight: 500;
+}
+
+.noidung-baiviet-ganday h4 a {
+    color: #242424;
+    transition-duration: 0.4s;
+}
+
+.noidung-baiviet-ganday h4 a:hover {
+    color: #f6ab49;
+    text-decoration: none;
+}

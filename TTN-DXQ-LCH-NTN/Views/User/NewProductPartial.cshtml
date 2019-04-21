@@ -1,0 +1,11 @@
+﻿@using TTN_DXQ_LCH_NTN.Models;
+@model List<Product>
+
+@{ 
+    foreach(var item in Model)
+    {
+        <div class="itemsmall">
+            <a href="#"><img src="@Url.Content(item.Image)" alt="Image" /></a>
+        </div>
+    }
+}

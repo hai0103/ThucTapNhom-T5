@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PetShop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="~/Content/vendor/bootstrap.js"></script>
+    <script src="~/Content/js/1.js"></script>
+    <link href="~/Content/vendor/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    <link href="https://cdn.shopify.com/s/files/1/0014/0971/2177/t/2/assets/simple-line-icons.css?11815140500437131955" rel="stylesheet" type="text/css" media="all">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="~/Content/owl-carousel/owl.carousel.css" rel="stylesheet" />
+    <!-- Default Theme -->
+    <link href="~/Content/owl-carousel/owl.theme.css" rel="stylesheet" />
+    <!-- Include js plugin -->
+    <script src="~/Content/owl-carousel/owl.carousel.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="handle"><i class="fas fa-align-justify"></i></div>
+        <div id="menu">  
+            <div class="logo"><a href=""><img src="~/Content/img/img/logo.png" /></a></div>
+            <ul id="main-menu">
+                <li>@Html.ActionLink("Trang chủ", "Index", "User")</li>
+                <li>
+                    @Html.ActionLink("Cửa hàng", "Store", "User")
+                    <ul class="sub-menu">
+                        <li><a href="">Thú nuôi</a></li>
+                        <li><a href="">Phụ kiện</a></li>
+                        <li><a href="">Đồ ăn</a></li>
+                        <li><a href="">Khác</a></li>
+                    </ul>
+                </li>
+                <li>@Html.ActionLink("Blog", "Blog", "User")</li>
+                <li>@Html.ActionLink("Dịch vụ", "Service", "User")</li>
+                <li>@Html.ActionLink("Thông tin", "About", "User")</li>
+            </ul>
+
+            <div class="shopcart">
+                @Html.Action("GioHangPartial", "GioHang")
+            </div>
+        </div>
+    </div>
+
+    <div class="back-to-top"><i class="fas fa-chevron-up"></i></div>
+
+    <div class="body-content">
+        @RenderBody()
+    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <img src="~/Content/img/img/logo.png" class="img-responsive" alt="">
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <h3>Contact</h3>
+                    <div class="diachi"><i class="fas fa-map-marker-alt"></i><p>236 Hoàng Quốc Việt, Cầu Giấy, Hà Nội</p></div>
+                    <div class="dienthoai"><i class="fas fa-phone"></i> <p>Phone: 0123456789</p></div>
+                    <div class="email"><i class="far fa-envelope"></i><p>Email: petland@CNW.com</p></div>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <span>Follow us</span>
+                    <div class="lienket">
+                        <i class="fab fa-facebook"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-youtube"></i>
+                        <i class="fab fa-instagram"></i>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="foot">
+            <div class="row">
+                <div class="ke"></div>
+                Copyright by PetLander
+            </div>
+        </div>
+    </div>
+    <script src="~/Content/js/1.js"></script>
+
+    <!-- <script type="text/javascript" src="js/slides.js"></script>   -->
+</body>
+</html>

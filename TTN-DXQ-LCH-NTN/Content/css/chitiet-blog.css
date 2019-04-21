@@ -1,0 +1,288 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: "Raleway", sans-serif;
+}
+
+div#tieude-duongdan {
+    margin-bottom: 35px;
+    margin-top: 25px;
+}
+
+.tentrang h3 {
+    font-size: 30px;
+    font-weight: 600;
+    padding: 35px 0px 5px 22px;
+    margin: 0px 0px;
+    background-color: #eee;
+}
+
+
+ul.breadcrumb {
+  padding: 28px 22px;
+  list-style: none;
+  background-color: #eee;
+}
+ul.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+}
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+ul.breadcrumb li a {
+  color: #333;
+  text-decoration: none;
+  transition-duration: 0.4s;
+}
+ul.breadcrumb li a:hover {
+  color: #f6ab49;
+  text-decoration: none;
+}
+
+
+.blog-anhchinh {
+    margin-bottom: 30px;
+}
+
+.blog-anhchinh img {
+    width: 100%;
+}
+
+.blog-trangthai ul li a {
+    color: #575757;
+    text-decoration: none;
+}
+
+.blog-noidung .blog-phandau h2 {font-weight: bold;font-size: 30px;text-transform: capitalize;}
+
+.blog-chitiet .blog-noidung .blog-phandau .blog-trangthai {
+    margin: 0 0 10px;
+}
+
+.blog-phandau .blog-trangthai ul li {
+    color: #575757;
+    display: inline-block;
+    list-style: outside none none;
+    position: relative;
+    margin: 0 11px 0 0;
+}
+
+.timkiem .khung-timkiem form button {
+    color: #f6ab49;
+    background-color: transparent;
+    border-color: #ededed;
+    border-image: none;
+    border-style: none none none solid;
+    border-width: medium medium medium 1px;
+    cursor: pointer;
+    font-size: 20px;
+    height: 100%;
+    padding: 0 20px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transition: all 0.3s ease 0s;
+    transform: translateY(-50%);
+}
+
+.cot-ben-phai .timkiem h4 {
+    font-size: 20px;
+    color: #242424;
+    font-weight: 600;
+    margin: 0;
+}
+
+.cot-ben-phai .timkiem .khung-timkiem {
+    margin-bottom: 50px;
+    margin-top: 25px;
+}
+
+.cot-ben-phai .timkiem .khung-timkiem form input {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #ededed;
+    color: #666;
+    height: 45px;
+    padding: 0 66px 0 15px;
+    width: 100%;
+}
+
+.cot-ben-phai .the h4 {
+    font-size: 20px;
+    color: #242424;
+    font-weight: 600;
+    margin: 0;
+}
+
+.cot-ben-phai .the .loai-the {
+    margin-top: 20px;
+}
+
+.cot-ben-phai .the .loai-the ul li {
+    list-style: outside none none;
+    margin-bottom: 6px;
+}
+
+.cot-ben-phai .the .loai-the ul li a {
+    text-transform: capitalize;
+    color: #333;
+    display: block;
+    font-size: 14px;
+    transition: all 0.4s ease-out 0s;
+}
+
+.cot-ben-phai .the .loai-the ul li a:hover {
+    color: #f6ab49;
+    padding-left: 5px;
+    text-transform: capitalize;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.cot-ben-phai .baiviet-ganday {
+    margin-top: 20px;
+}
+
+.cot-ben-phai .baiviet-ganday h4 {
+    color: #242424;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.cot-ben-phai .baiviet-ganday .mot-baiviet-ganday {
+    display: flex;
+    margin-bottom: 20px;
+    margin-top: 25px;
+}
+
+.anh-baiviet-ganday {
+    flex: 0 0 90px;
+}
+
+.anh-baiviet-ganday img {
+    width: 100%;
+}
+
+.noidung-baiviet-ganday {
+    margin: 0px 0 0 15px;
+}
+
+.noidung-baiviet-ganday h4 {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    margin: 0 0 5px;
+}
+
+.noidung-baiviet-ganday span {
+    color: #8c8c8c;
+    font-weight: 500;
+}
+
+.noidung-baiviet-ganday h4 a {
+    color: #242424;
+    transition-duration: 0.4s;
+}
+
+.noidung-baiviet-ganday h4 a:hover {
+    color: #f6ab49;
+    text-decoration: none;
+}
+
+.blog-the-chiase {
+    border-bottom: 2px solid #f6f6f6;
+    justify-content: space-between;
+    display: flex;
+    margin-top: 52px;
+    padding-bottom: 10px;
+}
+
+.blog-the-chiase .blog-the ul li {
+    display: inline-block;
+    position: relative;
+}
+
+.blog-the-chiase .blog-the ul li a {
+    color: #444;
+    font-size: 16px;
+    margin-right: 12px;
+    text-transform: capitalize;
+}
+
+.blog-the-chiase .blog-chiase ul li {
+    display: inline-block;
+    position: relative;
+    padding: 0px 4px;
+}
+
+.blog-the-chiase .blog-chiase {
+    display: inline-flex;
+    position: relative;
+}
+
+.blog-the-chiase .blog-chiase ul li i {
+    color: #969496;
+}
+
+.blog-the-chiase .blog-chiase ul li i:hover {
+    text-decoration: none;
+    color: #f6ab49;
+}
+
+.khung-binhluan h4 {
+    margin-bottom: 50px;
+    color: #444;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.khung-binhluan {
+    margin-top: 50px;
+}
+
+.nhap-dinhdanh {
+    margin-bottom: 30px;
+}
+
+.nhap-binhluan {
+    margin-bottom: 30px;
+}
+
+.khung-binhluan input {
+    background: #f7f7f7 none repeat scroll 0 0;
+    color: #333;
+    border: medium none;
+    height: 50px;
+    font-size: 15px;
+    padding: 2px 20px;
+    width: 100%;
+}
+
+.khung-binhluan .nhap-binhluan textarea#commentBody {
+    color: #333;
+    background: #f7f7f7 none repeat scroll 0 0;
+    width: 100%;
+    font-size: 15px;
+    border: medium none;
+    height: 235px;
+    padding: 25px 20px;
+}
+
+.nhap-binhluan input {
+    background-color: #f6ab49;
+    border-radius: 22px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    height: inherit;
+    font-weight: 600;
+    margin-top: 40px;
+    width: inherit;
+    padding: 14px 30px 13px;
+}

@@ -1,0 +1,75 @@
+﻿@using TTN_DXQ_LCH_NTN.Models;
+@model PagedList.PagedList<Product>
+@{
+    ViewBag.Title = "Product";
+    Layout = null;
+}
+@{ 
+    var dem = 0;
+}
+<div class="product">
+    @{
+        foreach (var item in Model)
+        {
+            dem++;
+
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                <div class="thumbnail">
+                    <img src="@Url.Content(item.Image)" alt="">
+                    <div class="text-center">
+                        <p>@item.ProductName</p>
+                        <p>
+                            @item.Price
+                        </p>
+                        <a href="@Url.Action("ProductDetail","User",new{@ProductID=item.ProductID})" class="btn btn-primary">Mua ngay</a>
+                    </div>
+                </div>
+            </div>
+
+            if (dem % 4 == 0)
+            {
+                <div style="clear:both"></div>
+            }
+
+        }
+    }
+</div>
+
+<div class="pageindexs">
+    @{
+        for (int i = 1; i < Model.PageCount; i++)
+        {
+            if (i == Model.PageNumber)
+            {
+                <span data-id="@i" style="color:snow" class="pageindex">@i</span>
+            }
+            else
+            {
+                <span data-id="@i" style="color:orange" class="pageindex">@i</span>
+            }
+        }
+    }
+</div>
+<script>
+    //Chuyen trang 
+    $(function () {
+        $('.pageindex').click(function () {
+            var chisotrang = $(this).data('id');
+            var maloai = $('maloai').data('id');
+            loadData(maloai, chisotrang);
+        });
+    })
+
+</script>
+<style>
+    .pageindexs {
+        padding: 20px 0px 153px 340px;
+    }
+    .pageindexs span{
+        margin-left:10px;
+        background:orangered;
+        padding:10px;
+        cursor:pointer;
+    }
+</style>
+

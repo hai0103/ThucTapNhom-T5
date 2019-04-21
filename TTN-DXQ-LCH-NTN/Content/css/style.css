@@ -1,0 +1,390 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.slide {
+    position: relative;
+}
+
+.header {
+    position: relative;
+    z-index: 2;
+}
+
+.itemsmall {
+    overflow: hidden;
+}
+
+    .itemsmall a img:hover {
+        transition: 0.5s ease-in-out;
+        transform: scale(1.1);
+    }
+
+.blog img {
+    width: 100%;
+    height: 246px;
+}
+
+#info {
+    margin-top: 41%;
+}
+
+#owl-example img {
+    width: 90%;
+}
+
+.blog {
+    padding-bottom: 124px;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+.foot {
+    text-align: center;
+    padding-top: 10px;
+    color: white;
+    border-top: 1px solid white;
+}
+
+.lamdep {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.lienket {
+    margin-top: 41px;
+    /* margin-left: 3px; */
+}
+
+.xuathien {
+    opacity: 1;
+    visibility: visible;
+    transition: 0.4s;
+}
+
+.lienket i {
+    margin: 6px 12px;
+}
+
+span {
+    font-size: 13px;
+    color: white;
+    position: relative;
+    left: 3px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.footer {
+    background: #141431;
+    padding-top: 4px;
+}
+
+    .footer p, i, h3 {
+        color: white;
+    }
+
+.lamdep p, .blog p {
+    color: black;
+}
+
+.slide img {
+    width: 100%;
+}
+
+.dichvu a, .lamdep a, .blog a {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.chuyenslide {
+    /* padding-top: 100px; */
+    position: absolute;
+    z-index: 10;
+    top: 800px;
+    left: 638px;
+}
+
+.sanpham {
+    padding-top: 77px;
+}
+
+.motslide img {
+    width: 100%;
+}
+
+.motslide {
+    position: absolute;
+    width: 100%;
+}
+
+.cacslide {
+    position: relative;
+}
+
+.chuyenslide ul {
+    text-align: center;
+}
+
+    .chuyenslide ul li {
+        display: inline-table;
+        text-indent: -9999px;
+        border: 1px solid gray;
+        width: 22px;
+        border-radius: 50%;
+        margin: 9px;
+    }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+}
+
+.back-to-top {
+    width: 50px;
+    height: 50px;
+    background: rgba(229, 243, 17, 0.91);
+    font-size: 30px;
+    color: whitesmoke;
+    text-align: center;
+    vertical-align: center;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 97%;
+    bottom: 120px;
+    margin-left: -25px;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 100;
+}
+
+    .back-to-top.hien-ra {
+        visibility: visible;
+        opacity: 1;
+        animation: dilen 0.5s forwards;
+    }
+
+.chubay {
+    animation: dilen 1.5s forwards;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.dichvu p {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.sangphai {
+    animation: sangphai 1s forwards;
+    opacity: 1;
+    visibility: visible;
+    transition: 0.4s;
+}
+
+.sangtrai {
+    animation: sangtrai 1s forwards;
+    opacity: 1 !important;
+    visibility: visible;
+    transition: 0.4s;
+}
+
+@-webkit-keyframes sangphai {
+    from {
+        transform: translateX(-400px) translateY(0px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0px) translateY(0px);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes sangtrai {
+    from {
+        transform: translateX(400px) translateY(0px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0px) translateY(0px);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes dilen {
+    from {
+        transform: translateX(0px) translateY(100px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0px) translateY(0px);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes dixuong {
+    from {
+        transform: translateX(0px) translateY(-100px);
+    }
+
+    to {
+        transform: translateX(0px) translateY(0px);
+    }
+}
+
+.title {
+    padding: 20px;
+    text-align: center;
+    font-family: arial;
+}
+
+.dichvu, .lamdep, .blog {
+    padding-top: 221px;
+}
+
+.co-dinh-menu {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    animation: dixuong 1s forwards;
+    width: 100%;
+}
+
+.title {
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #f8b26c;
+    /* font-weight: 600; */
+    margin-bottom: -53px;
+    padding-top: -2px;
+}
+
+/*.appear {
+    animation: 1s phongto forwards;
+    visibility: visible;
+    opacity: 1;
+}*/
+
+@-webkit-keyframes phongto {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+.shopcart {
+    color: white;
+    margin-left: 10%;
+    line-height: 40px;
+}
+
+.logo {
+    width: 200px;
+}
+
+    .logo img {
+        width: 107px;
+        line-height: -8px;
+    }
+
+div#menu {
+    background: #dc3343;
+    display: flex;
+}
+
+#menu ul {
+    text-align: center;
+    list-style: none;
+    /* height: 50px; */
+    /* height: 22px; */
+}
+
+ul#main-menu {
+    height: 24px;
+}
+
+#main-menu li a {
+    /* height: 100%; */
+    /* margin-bottom: -20px; */
+    padding-bottom: -12px;
+}
+
+#menu ul li {
+    display: inline-block;
+    /* float: left; */
+    /* margin: 10px 20px; */
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    position: relative;
+}
+
+    #menu ul li > .sub-menu {
+        display: none;
+        padding-top: 10px;
+        /* margin-top: 2px; */
+    }
+
+.sub-menu {
+    position: absolute;
+    background: #dc3343;
+}
+
+#menu ul li:hover .sub-menu {
+    display: block;
+}
+
+#menu ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    /* font-family: Nunito sans-serif; */
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight:600;
+}
+
+    #menu ul li a:hover {
+        background: white;
+        color: #333;
+    }
+
+.badge {
+    background-color: #6394F8;
+    border-radius: 10px;
+    color: white;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 1;
+    padding: 3px 7px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.handle {
+    width: 100%;
+    background: #727273;
+    text-align: right;
+    box-sizing: border-box;
+    padding: 15px 10px;
+    color: white;
+    font-size: 13px;
+    display: none;
+}

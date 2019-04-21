@@ -1,0 +1,108 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+/* Menu header */
+.shopcart {
+    color: white;
+    margin-left: 10%;
+    line-height: 40px;
+}
+
+html,body {
+    font-family: Nunito sans-serif !important;
+    /* font-size: 12px; */
+}
+body{
+	font-family: 'Nunito', sans-serif;
+}
+.logo {
+    width: 200px;
+}
+
+.logo img {width: 107px;line-height: -8px;}
+
+div#menu {
+    background: #0f0f3e;
+    display: flex;
+}
+
+#menu ul {
+    text-align: center;
+    list-style: none;
+    /* height: 50px; */
+    /* height: 22px; */
+}
+
+ul#main-menu {
+    height: 24px;
+}
+
+#main-menu li a {
+    /* height: 100%; */
+    /* margin-bottom: -20px; */
+    padding-bottom: -12px;
+}
+
+#menu ul li {
+    display: inline-block;
+    /* float: left; */
+    /* margin: 10px 20px; */
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    position: relative;
+}
+
+#menu ul li>.sub-menu {
+    display: none;
+    padding-top: 10px;
+    /* margin-top: 2px; */
+}
+
+.sub-menu {
+    position: absolute;
+    background: #0f0f3e;
+}
+
+#menu ul li:hover .sub-menu {
+    display: block;
+}
+
+#menu ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    /* font-family: Nunito sans-serif; */
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+#menu ul li a:hover {
+    background: white;
+    color: #333;
+}
+.badge{
+	    background-color: #6394F8;
+    border-radius: 10px;
+    color: white;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 1;
+    padding: 3px 7px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+.handle {
+    width: 100%;
+    background: #727273;
+    text-align: right;
+    box-sizing: border-box;
+    padding: 15px 10px;
+    color: white;
+    font-size: 13px;
+    display: none;
+}
+
+/* Responsive */

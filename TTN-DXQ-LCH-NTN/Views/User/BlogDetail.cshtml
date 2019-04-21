@@ -1,0 +1,159 @@
+﻿@using TTN_DXQ_LCH_NTN.Models
+@model Blog
+
+@{
+    ViewBag.Title = "BlogDetail";
+    Layout = "~/Views/Shared/NguoiDungLayout.cshtml";
+}
+
+<link href="~/Content/css/chitiet-blog.css" rel="stylesheet" />
+<div class="main-container">
+    <div class="container" id="tieude-duongdan">
+        <!-- đường dẫn -->
+        <div class="tentrang">
+            <h3>@Model.Title</h3>
+        </div>
+        <ul class="breadcrumb">
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="#">Tất cả bài viết</a></li>
+            <li><a href="#">@Model.Title</a></li>
+
+
+        </ul>
+
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9" id="blog-content">
+                <div class="blog-chitiet">
+                    <div class="blog-noidung">
+                        <div class="blog-anhchinh">
+
+                            <a href="#"><img src="@Url.Content(Model.Image)" alt=""></a>
+                        </div>
+                        <div class="blog-phandau">
+                            <h2>@Model.Title</h2>
+                            <div class="blog-trangthai">
+                                <ul>
+                                    <li>@Model.Date</li>
+                                    <li><a href="#">0 comments</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p>@Model.ContentDM</p>
+                        <p>@Model.ContentDetail</p>
+
+                        <div class="blog-the-chiase">
+                            <div class="blog-the">
+                                <ul>
+                                    <li><a href="#">Mèo</a></li>
+                                    <li><a href="#">Thói quen</a></li>
+                                </ul>
+                            </div>
+                            <div class="blog-chiase">
+                                <span>Chia sẻ :</span>
+                                <ul>
+                                    <li><a href="#"><i class="icon-social-facebook"></i></a></li>
+                                    <li><a href="#"><i class="icon-social-twitter"></i></a></li>
+                                    <li><a href="#"><i class="icon-social-instagram"></i></a></li>
+                                    <li><a href="#"><i class="icon-social-linkedin"></i></a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="blog-binhluan">
+                        <form method="post" accept-charset="utf-8" class="comments-form">
+                            <input type="hidden" name="form-type" value="new_comment">
+                            <input type="hidden" name="utf-8" value="✓">
+                            <div class="khung-binhluan">
+                                <h4>Đăng một bình luận</h4>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="nhap-dinhdanh">
+                                            <input type="text" placeholder="Tên" name="comment[author]" id="commentAuthor">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="nhap-dinhdanh">
+                                            <input type="text" placeholder="Email" name="comment[email]" id="commentEmail">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="nhap-binhluan">
+                                            <textarea name="comment[body]" placeholder="Nhập bình luận" id="commentBody" cols="30" rows="10" style="margin-top: 0px; margin-bottom: 0px; height: 210px;"></textarea>
+                                            <input type="submit" value="Gửi bình luận">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- end  bình luận -->
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <div class="cot-ben-phai">
+                    <div class="timkiem">
+                        <h4>Tìm kiếm</h4>
+                        <div class="khung-timkiem">
+                            <form action="/search" method="get" role="search" class="shop-search-form" style="position: relative;">
+                                <input type="text" value="" placeholder="Tìm kiếm .. " class="input-group-field" aria-label="Tìm kiếm ....">
+                                <button type="submit"><i class="icon-magnifier"></i></button>
+                            </form>
+                        </div>
+                    </div>		<!-- end timkiem -->
+                    <div class="the">
+                        <h4>Thẻ</h4>
+                        <div class="loai-the">
+                            <ul>
+                                <li><a href="#">Chó</a></li>
+                                <li><a href="#">Mèo</a></li>
+                                <li><a href="#">Thức ăn</a></li>
+                                <li><a href="#">Thói quen</a></li>
+                                <li><a href="#">Sức khỏe</a></li>
+                                <li><a href="#">Mẹo</a></li>
+                            </ul>
+                        </div>
+                    </div>		<!-- end thẻ -->
+                    <!-- bai viet gan day-->
+                    <div class="baiviet-ganday">
+                        <h4>Bài viêt gần đây</h4>
+                        <div class="mot-baiviet-ganday">
+                            <div class="anh-baiviet-ganday">
+                                <a href="#"><img src="~/Content/img/img/blog1.jpg" alt=""></a>
+                            </div>
+                            <div class="noidung-baiviet-ganday">
+                                <h4><a href="#">Chăm sóc, vuốt ve ...</a></h4>
+                                <span>Tháng Sáu 22, 2018</span>
+                            </div>
+                        </div>
+                        <div class="mot-baiviet-ganday">
+                            <div class="anh-baiviet-ganday">
+                                <a href="#"><img src="~/Content/img/img/blog-blog2.jpg" alt=""></a>
+                            </div>
+                            <div class="noidung-baiviet-ganday">
+                                <h4><a href="#">Lợi ích khi nuôi  ...</a></h4>
+                                <span>Tháng Sáu 26, 2018</span>
+                            </div>
+                        </div>
+                        <div class="mot-baiviet-ganday">
+                            <div class="anh-baiviet-ganday">
+                                <a href="#"><img src="~/Content/img/img/blog-blog3.jpg" alt=""></a>
+                            </div>
+                            <div class="noidung-baiviet-ganday">
+                                <h4><a href="#">Dinh dưỡng và thức...</a></h4>
+                                <span>Tháng Sáu 25, 2018</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+             </div>
+
+         </div>
+     </div>
+ </div>

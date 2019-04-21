@@ -1,0 +1,92 @@
+﻿@using TTN_DXQ_LCH_NTN.Models
+@model List<Blog>
+
+@{
+    ViewBag.Title = "Blog";
+    Layout = "~/Views/Shared/NguoiDungLayout.cshtml";
+}
+<link href="~/Content/css/blog.css" rel="stylesheet" />
+<div class="main-container">
+    <div class="container" id="tieude-duongdan">
+        <!-- đường dẫn -->
+        <div class="tentrang">
+            <h3>BLOG</h3>
+        </div>
+        <ul class="breadcrumb">
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Tất cả bài viết</a></li>
+
+        </ul>
+
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+
+                <div id="blog-content">
+                    <!--//ListBlog-->
+                </div>
+                <!-- end baiviet -->
+            </div>
+
+
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <div class="cot-ben-phai">
+                    <div class="timkiem">
+                        <h4>Tìm kiếm</h4>
+                        <div class="khung-timkiem">
+                            <form action="/search" method="get" role="search" class="shop-search-form" style="position: relative;">
+                                <input type="text" value="" placeholder="Tìm kiếm .. " class="input-group-field" aria-label="Tìm kiếm ....">
+                                <button type="submit"><i class="icon-magnifier"></i></button>
+                            </form>
+                        </div>
+                    </div>		<!-- end timkiem -->
+                    <div class="the">
+                        <h4>Thẻ</h4>
+                        <div class="loai-the">
+                            <ul>
+                                <li><a href="#">Chó</a></li>
+                                <li><a href="#">Mèo</a></li>
+                                <li><a href="#">Thức ăn</a></li>
+                                <li><a href="#">Thói quen</a></li>
+                                <li><a href="#">Sức khỏe</a></li>
+                                <li><a href="#">Mẹo</a></li>
+                            </ul>
+                        </div>
+                    </div>		<!-- end thẻ -->
+                    <!-- bai viet gan day-->
+                    @Html.Action("BlogInfoPartial", "User")
+
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+<script>
+
+    //Phân trang cho trang Blog
+    function loadData(chisotrang) {
+         $.ajax({
+                type: 'GET',//HTTP GET
+                data: { pageIndex: chisotrang },//truyền tham số cho action listBlog là chisotrang
+                url: '@Url.Action("listBlog","User")',//Gọi action listBlog trong UserController
+                dataType: 'html', //kiểu dữ liệu là html, vì lấy từ partial view listBlog
+                success: function (data) {
+                    $('#blog-content').html(data/*+'<span class="maloai" data-id="'+maloai+'"></span>'*/);
+                }
+            });
+    }
+    $(function () {
+        loadData(null);
+    });
+
+    
+</script>
+

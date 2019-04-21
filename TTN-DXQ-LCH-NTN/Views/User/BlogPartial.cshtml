@@ -1,0 +1,14 @@
+﻿@using TTN_DXQ_LCH_NTN.Models;
+
+@model List<Blog>
+
+@{
+    foreach (var item in Model)
+    {
+        <div class="col-xs-8 col-sm-4 col-md-4 col-lg-4">
+            <div class="thumbnail"><img src="@Url.Content(item.Image)" class="img-responsive" alt="bl1"></div>
+            <h3><a href="#">@item.Title</a></h3>
+            <p>@item.ContentDM</p>
+        </div>
+    }
+}
