@@ -1,0 +1,31 @@
+﻿@using TTN_DXQ_LCH_NTN.Models;
+@if (Session["Account"] != null)
+{
+    using (Html.BeginForm("LogOff", "Login", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+        Customer customer = (Customer)Session["Account"];
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                @Html.ActionLink("Xin chào " + customer.CustomerName + " !", "ShoppingCart", "GioHang")
+            </li>
+            <li><a href="javascript:document.getElementById('logoutForm').submit()">Đăng xuất</a></li>
+        </ul>
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Đăng ký", "Register", "Login")</li>
+        <li>@Html.ActionLink("Đăng nhập", "Login", "Login")</li>
+    </ul>
+}
+
+<style>
+    .login-partial ul li a {
+        padding: 11px 0px 10px 0px;
+    }
+    .login-partial {
+        margin-left: 60px;
+    }
+</style>

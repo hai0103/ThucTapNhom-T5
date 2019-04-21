@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using TTN_DXQ_LCH_NTN.Models;
@@ -54,6 +55,12 @@ namespace TTN_DXQ_LCH_NTN.Controllers
             db.Customers.Add(customer);
             db.SaveChanges();
             return Redirect("Login");
+        }
+
+        public ActionResult LogOff()
+        {
+            Session["Account"] = null;
+            return RedirectToAction("Index", "User");
         }
     }
 }

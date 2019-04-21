@@ -1,1 +1,12 @@
-﻿<i class="fa fa-shopping-cart">@Html.ActionLink("Giỏ hàng","ShoppingCart","GioHang")</i>(@ViewBag.Total)
+﻿<i class="fa fa-shopping-cart">@Html.ActionLink("Giỏ hàng", "ShoppingCart", "GioHang") (@ViewBag.Total) </i>
+
+<style>
+    .shopcart a {
+        text-decoration: none;
+        color: white;
+        text-transform: uppercase;
+        margin: 5px;
+        font-family: 'Nunito';
+        font-size: 13px;
+    }
+</style>

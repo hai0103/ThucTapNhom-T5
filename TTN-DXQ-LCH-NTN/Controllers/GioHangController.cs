@@ -159,6 +159,50 @@ namespace TTN_DXQ_LCH_NTN.Controllers
             ViewBag.TotalPrice = TotalPrice();
             return PartialView();
         }
-        
+        // Sửa giỏ hàng
+        public ActionResult EditShoppingCart()
+        {
+            if(Session["ShoppingCart"] == null)
+            {
+                return RedirectToAction("Store", "User");
+            }
+            List<ShoppingCart> lstShoppingCart = GetShoppingCarts();
+            return View(lstShoppingCart);
+        }
+
+        // Đặt hàng
+        [HttpPost]
+        public ActionResult DatHang()
+        {
+            //Phải đănng nhập mới mua được hàng
+            if(Session["Account"] == null)
+            {
+                return RedirectToAction("Login", "Login");
+            }
+            if(Session["ShoppingCart"] == null)
+            {
+                return RedirectToAction("Store", "Login");
+            }
+            List<ShoppingCart> carts = GetShoppingCarts();
+            Order order = new Order();
+            Customer customer = (Customer)Session["Account"];
+            order.CustomerID = customer.CustomerID;
+            order.OrderDate = DateTime.Now;
+            db.Orders.Add(order);
+            db.SaveChanges();
+
+            //Thêm chi tiết đơn hàng
+            foreach(var item in carts)
+            {
+                OrderDetail orderDetail = new OrderDetail();
+                orderDetail.OrderID = order.OrderID;
+                orderDetail.ProductID = item.ProductID;
+                orderDetail.Total = item.Total;
+                orderDetail.Price = (decimal)item.Price;
+                db.OrderDetails.Add(orderDetail);
+            }
+            db.SaveChanges();
+            return RedirectToAction("Store", "User");
+        }
     }
 }
