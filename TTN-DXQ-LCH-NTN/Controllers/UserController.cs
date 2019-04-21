@@ -83,17 +83,12 @@ namespace TTN_DXQ_LCH_NTN.Controllers
             return PartialView(lstAni);
         }
 
-        public ActionResult ProductDetail(int ProductID=1)
+        public ActionResult ProductDetail (int ProductID)
         {
-            Product product = db.Products.SingleOrDefault(p => p.ProductID == ProductID);
-            if (product == null)
-            {
-                Response.StatusCode = 404;
-                return null;
-            }
-            return View(product);
+            Product sanpham = db.Products.SingleOrDefault(sp => sp.ProductID == ProductID);
+            return View(sanpham);
         }
+        
 
-    
     }
 }

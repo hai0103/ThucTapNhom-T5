@@ -159,5 +159,6 @@ namespace TTN_DXQ_LCH_NTN.Controllers
             ViewBag.TotalPrice = TotalPrice();
             return PartialView();
         }
+        
     }
 }

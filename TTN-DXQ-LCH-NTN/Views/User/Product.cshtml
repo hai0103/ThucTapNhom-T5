@@ -4,9 +4,10 @@
     ViewBag.Title = "Product";
     Layout = null;
 }
-@{ 
+@{
     var dem = 0;
 }
+
 <div class="product">
     @{
         foreach (var item in Model)
@@ -21,7 +22,7 @@
                         <p>
                             @item.Price
                         </p>
-                        <a href="@Url.Action("ProductDetail","User",new{@ProductID=item.ProductID})" class="btn btn-primary">Mua ngay</a>
+                        <a href="@Url.Action("ProductDetail", "User", new { @ProductID = item.ProductID })" class="btn btn-primary">Mua ngay</a>
                     </div>
                 </div>
             </div>
@@ -51,7 +52,7 @@
     }
 </div>
 <script>
-    //Chuyen trang 
+    //Chuyen trang
     $(function () {
         $('.pageindex').click(function () {
             var chisotrang = $(this).data('id');
@@ -65,11 +66,12 @@
     .pageindexs {
         padding: 306px 0px 153px 340px;
     }
-    .pageindexs span{
-        margin-left:10px;
-        background:orangered;
-        padding:10px;
-        cursor:pointer;
-    }
+
+        .pageindexs span {
+            margin-left: 10px;
+            background: orangered;
+            padding: 10px;
+            cursor: pointer;
+        }
 </style>
 
