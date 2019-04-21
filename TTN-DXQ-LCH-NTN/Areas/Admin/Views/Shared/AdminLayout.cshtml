@@ -44,6 +44,8 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
     <script src="~/Areas/Admin/Content/js/custom.js"></script>
     <link href="~/Areas/Admin/Content/css/custom.css" rel="stylesheet">
     <!--//Metis Menu -->
+
+    <link href="~/Areas/Admin/Content/css/manage.css" rel="stylesheet" type="text/css">
 </head>
 <body class="cbp-spmenu-push">
     <div class="main-content">
@@ -59,7 +61,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                             <a href="#"><i class="fas fa-paw nav_icon"></i>Quản lý loại sản phẩm <span class="nav-badge">12</span> <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level collapse" aria-expanded="false">
                                 <li>
-                                    <a href="@Url.Action("CategoryOfProductsManage","Admin")">Danh sách loại sản phẩm</a>
+                                    <a href="@Url.Action("Index","CategoryOfProducts")">Danh sách loại sản phẩm</a>
                                 </li>
                                 <li>
                                     <a href="media.html">...</a>
@@ -135,7 +137,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                 <!--toggle button end-->
                 <!--logo -->
                 <div class="logo">
-                    <a href="index.html">
+                    <a href="@Url.Action("Index","Admin")">
                         <h1>PetLand</h1>
                         <span>Admin</span>
                     </a>
@@ -144,7 +146,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                 <!--search-box-->
                 <div class="search-box">
                     <form class="input">
-                        <input class="sb-search-input input__field--madoka" placeholder="Search..." type="search" id="input-31" />
+                        <input class="sb-search-input input__field--madoka" placeholder="Tìm kiếm..." type="search" id="input-31" />
                         <label class="input__label" for="input-31">
                             <svg class="graphic" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
                                 <path d="m0,0l404,0l0,77l-404,0l0,-77z" />
@@ -344,15 +346,16 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
             <div class="main-page">
                 @RenderBody()
             </div>
-        <div/>
+        <div />
 
 
-            <!--footer-->
+            @*<!--footer-->
             <div class="footer">
                 <p>&copy; 2016 Novus Admin Panel. All Rights Reserved | Design by <a href="https://w3layouts.com/" target="_blank">w3layouts</a></p>
             </div>
-            <!--//footer-->
+            <!--//footer-->*@
         </div>
+    </div>
     <!-- Classie -->
     <script src="~/Areas/Admin/Content/js/classie.js"></script>
     <script>

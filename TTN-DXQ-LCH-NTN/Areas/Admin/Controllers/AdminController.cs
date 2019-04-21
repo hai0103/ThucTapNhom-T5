@@ -16,11 +16,7 @@ namespace TTN_DXQ_LCH_NTN.Areas.Admin.Controllers
         {
             return View();
         }
-        public ActionResult CategoryOfProductsManage()
-        {
-            var lstCate = db.CategoryOfProducts.ToList();
-            return View(lstCate);
-        }
+       
 
        
     }
