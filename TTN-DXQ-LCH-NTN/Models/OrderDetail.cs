@@ -22,5 +22,9 @@ namespace TTN_DXQ_LCH_NTN.Models
         public int? Total { get; set; }
 
         public decimal? Price { get; set; }
+
+        public virtual Order Order { get; set; }
+
+        public virtual Product Product { get; set; }
     }
 }

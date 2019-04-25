@@ -155,7 +155,6 @@
     <Compile Include="Models\PetLandModel.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ShoppingCart.cs" />
-    <Compile Include="Models\Slide.cs" />
     <Compile Include="Models\sysdiagram.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -288,7 +287,7 @@
     <Content Include="Views\GioHang\ShoppingCart.cshtml" />
     <Content Include="Views\User\ProductDetail.cshtml" />
     <Content Include="Views\GioHang\GioHangPartial.cshtml" />
-    <Content Include="Views\GioHang\Update.cshtml" />
+    <Content Include="Views\GioHang\EditShoppingCart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -11,13 +11,10 @@ namespace TTN_DXQ_LCH_NTN.Models
     {
         public int BlogID { get; set; }
 
-        [StringLength(50)]
         public string Title { get; set; }
 
-        [StringLength(50)]
         public string ContentDM { get; set; }
 
-        [StringLength(50)]
         public string ContentDetail { get; set; }
 
         [StringLength(1000)]

@@ -18,13 +18,17 @@ namespace TTN_DXQ_LCH_NTN.Models
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<OrderDetail> OrderDetails { get; set; }
         public virtual DbSet<Product> Products { get; set; }
-        public virtual DbSet<Slide> Slides { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Blog>()
                 .Property(e => e.Image)
+                .IsFixedLength()
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Customer>()
+                .Property(e => e.UserName)
                 .IsFixedLength()
                 .IsUnicode(false);
 
@@ -43,23 +47,28 @@ namespace TTN_DXQ_LCH_NTN.Models
                 .IsFixedLength()
                 .IsUnicode(false);
 
+            modelBuilder.Entity<Order>()
+                .HasMany(e => e.OrderDetails)
+                .WithRequired(e => e.Order)
+                .WillCascadeOnDelete(false);
+
             modelBuilder.Entity<OrderDetail>()
                 .Property(e => e.Price)
                 .HasPrecision(18, 0);
 
             modelBuilder.Entity<Product>()
+                .Property(e => e.Price)
+                .HasPrecision(18, 0);
+
+            modelBuilder.Entity<Product>()
                 .Property(e => e.Image)
                 .IsFixedLength()
                 .IsUnicode(false);
 
             modelBuilder.Entity<Product>()
-                .Property(e => e.Price)
-                .HasPrecision(18, 0);
-
-            modelBuilder.Entity<Slide>()
-                .Property(e => e.Image)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .HasMany(e => e.OrderDetails)
+                .WithRequired(e => e.Product)
+                .WillCascadeOnDelete(false);
         }
     }
 }
