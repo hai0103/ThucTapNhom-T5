@@ -56,7 +56,7 @@ namespace TTN_DXQ_LCH_NTN.Controllers
         }
 
         //Cập nhật giỏ hàng
-        public ActionResult Update(int ProductID)
+        public PartialViewResult Update(int ProductID, int Total)
         {
             //kiểm tra mã sản phẩm
             Product product = db.Products.SingleOrDefault(p => p.ProductID == ProductID);
@@ -71,13 +71,15 @@ namespace TTN_DXQ_LCH_NTN.Controllers
             //nếu rồi thì sửa số lượng thành giá trị ô textbox số lượng
             ShoppingCart item = lstShoppingCart.Find(i => i.ProductID == ProductID);
             if (item != null)
-            {
-                item.Total = Convert.ToInt16(Request.Form["txtSoLuong"].ToString());
+            {    
                 //Total = Convert.ToInt16(Request.Form["txtSoLuong"].ToString());
-                //item.Total = Total;
+                item.Total = Total;
             }
-            return RedirectToAction("ShoppingCart");
+            ViewBag.TotalPrice = TotalPrice();
+            return PartialView();
         }
+
+
 
         //Xóa giỏ hàng
         public ActionResult Delete(int ProductID)
@@ -101,7 +103,7 @@ namespace TTN_DXQ_LCH_NTN.Controllers
             }
             if (lstShoppingCart.Count == 0)
             {
-                return RedirectToAction("Store","User");
+                return RedirectToAction("ShoppingCart","GioHang");
             }
             return RedirectToAction("ShoppingCart");
         }

@@ -1,0 +1,9 @@
+﻿@using (Html.BeginForm("DatHang", "GioHang"))
+{
+    <div class="price">
+        <p class="total">Thành tiền</p>
+        <span>@String.Format("{0:0,0}", ViewBag.TotalPrice)</span><br />
+        <span>đ</span>
+        <input type="submit" class="btn btn-block btn-danger thanhtoan" value="Thanh toán">
+    </div>
+}

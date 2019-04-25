@@ -6,21 +6,23 @@ namespace TTN_DXQ_LCH_NTN.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("OrderDetail")]
-    public partial class OrderDetail
+    [Table("Slide")]
+    public partial class Slide
     {
         [Key]
         [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int OrderID { get; set; }
+        public int SlideID { get; set; }
 
         [Key]
         [Column(Order = 1)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int ProductID { get; set; }
+        [StringLength(50)]
+        public string Image { get; set; }
 
-        public int? Total { get; set; }
+        [StringLength(50)]
+        public string SlideContent { get; set; }
 
-        public decimal? Price { get; set; }
+        [Column(TypeName = "date")]
+        public DateTime? Date { get; set; }
     }
 }

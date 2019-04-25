@@ -9,12 +9,6 @@ namespace TTN_DXQ_LCH_NTN.Models
     [Table("Customer")]
     public partial class Customer
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Customer()
-        {
-            Orders = new HashSet<Order>();
-        }
-
         public int CustomerID { get; set; }
 
         [StringLength(50)]
@@ -23,16 +17,15 @@ namespace TTN_DXQ_LCH_NTN.Models
         [StringLength(50)]
         public string UserName { get; set; }
 
-        [StringLength(100)]
+        [StringLength(20)]
         public string Password { get; set; }
 
         [StringLength(50)]
         public string Email { get; set; }
 
-        [StringLength(100)]
         public string Address { get; set; }
 
-        [StringLength(10)]
+        [StringLength(20)]
         public string PhoneNumber { get; set; }
 
         public int? Sex { get; set; }
@@ -40,7 +33,6 @@ namespace TTN_DXQ_LCH_NTN.Models
         [Column(TypeName = "date")]
         public DateTime? BirthDate { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order> Orders { get; set; }
+        public int? IsAdmin { get; set; }
     }
 }

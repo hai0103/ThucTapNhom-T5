@@ -59,11 +59,11 @@
                                 </div>
                             </div>
                             <div class="col-right">
-                                <a href="@Url.Action("ProductDetail","User",new{@ProductID=item.ProductID })"><p>@item.ProductName</p></a>
-                                <div class="delete"><a href="">Xóa</a></div>
+                                <a href="@Url.Action("ProductDetail", "User", new { @ProductID = item.ProductID })"><p>@item.ProductName</p></a>
+                                <div class="delete"><a href="@Url.Action("Delete", "GioHang", new { @ProductID=item.ProductID})">Xóa</a></div>
                                 <div class="gia">@String.Format("{0:0,0}", item.Price)</div>
                                 <form id="formTT" action="">
-                                    <input data-id="@item.ProductID" id="soLuong" name="txtSoLuong" type="number" value=@item.Total>
+                                    <input data-id="@item.ProductID" class="soLuong" name="txtSoLuong" type="number" value=@item.Total>
                                 </form>
                             </div>
                         </div>
@@ -87,16 +87,19 @@
     }*@
 
     @*edit gio hang*@
+    <div class="edit">
+        @using (Html.BeginForm("DatHang", "GioHang"))
+        {
+            <div class="price">
+                <p class="total">Thành tiền</p>
+                <span>@String.Format("{0:0,0}", tong)</span><br />
+                <span>đ</span>
+                <input type="submit" class="btn btn-block btn-danger thanhtoan" value="Thanh toán">
+            </div>
+        }
+        @*@Html.Action("Update","GioHang")*@
+    </div>
 
-    @using (Html.BeginForm("DatHang", "GioHang"))
-    {
-        <div class="price">
-            <p class="total">Thành tiền</p>
-            <span>@String.Format("{0:0,0}", tong)</span><br />
-            <span>đ</span>
-            <input type="submit" class="btn btn-block btn-danger thanhtoan" value="Thanh toán">
-        </div>
-    }
 
 </div>
 
@@ -186,4 +189,20 @@
             }
         });
     })*@
+
+    $(function () {
+        $('.soLuong').change(function () {
+            soLuongMoi = $(this).val();
+            masp = $(this).data('id');
+            $.ajax({
+                url: '@Url.Action("Update","GioHang")',
+                type: 'POST',
+                data: { ProductID: masp, Total: soLuongMoi },
+                dataType: 'html',
+                success: function (kq) {
+                    $('.edit').html(kq);
+                }
+            });
+        })
+    });
 </script>

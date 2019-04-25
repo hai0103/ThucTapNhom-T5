@@ -29,6 +29,5 @@ namespace TTN_DXQ_LCH_NTN.Models
             Price = (double)pr.Price;
             Total = 1;
         }
-
     }
 }
